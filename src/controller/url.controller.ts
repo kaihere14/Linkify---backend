@@ -1,6 +1,7 @@
 import Url from "../models/urlSchema";
 import { Request,Response } from "express";
 import { url } from "inspector";
+import { nanoid } from "nanoid";
 // nanoid v5 is ESM-only; use dynamic import in CommonJS output
 
 interface urlData{
@@ -15,7 +16,7 @@ export const urlRegister = async(req:Request,res:Response)=>{
         if(!link){
             return res.status(404).json({status:404,message:"PLease enter a valid url"})
         }
-        const { nanoid } = await import("nanoid")
+        
         const url_code:string = nanoid(6)
         console.log(url_code)
         const url = await Url.create({
