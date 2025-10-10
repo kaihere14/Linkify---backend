@@ -1,6 +1,6 @@
 import express from "express"
 import "dotenv/config"
-import { connectDB } from "./database"
+import { connectDB } from "./database/index.js"
 import cors from "cors"
 
 const app = express()
@@ -13,8 +13,8 @@ app.use(cors({
 }))
 
 //routes
-import urlRegister from "./routes/url.register"
-import urlRedirect from "./routes/redirect.route"
+import urlRegister from "./routes/url.register.js"
+import urlRedirect from "./routes/redirect.route.js"
 
 app.use("/api/url",urlRegister)
 app.use("/",urlRedirect)

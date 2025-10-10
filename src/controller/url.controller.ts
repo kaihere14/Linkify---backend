@@ -1,4 +1,4 @@
-import Url from "../models/urlSchema";
+import Url from "../models/urlSchema.js";
 import { Request,Response } from "express";
 import { url } from "inspector";
 import { nanoid } from "nanoid";
