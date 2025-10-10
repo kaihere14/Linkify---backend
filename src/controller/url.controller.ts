@@ -17,6 +17,7 @@ export const urlRegister = async(req:Request,res:Response)=>{
         }
         const { nanoid } = await import("nanoid")
         const url_code:string = nanoid(6)
+        console.log(url_code)
         const url = await Url.create({
             original_link : link,
             short_code : url_code,
