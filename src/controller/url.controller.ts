@@ -25,7 +25,7 @@ export const urlRegister = async(req:Request,res:Response)=>{
         })
        
 
-        return res.status(201).json({status:201,data:{ shortned_url : `linkify-backend-ivory.vercel.app/${url?.short_code}`,click_count:url.click_count},message:"Url shortned successfully"})
+        return res.status(201).json({status:201,data:{ shortned_url : `linkifyts.vercel.app/${url?.short_code}`,click_count:url.click_count},message:"Url shortned successfully"})
         
     } catch (error) {
         return res.status(500).json({status:500,message:"Internal Server error"})
