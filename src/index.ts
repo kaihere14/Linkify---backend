@@ -9,7 +9,7 @@ const port = process.env.PORT_NUMBER
 //app config
 app.use(express.json({limit:"16kb", strict: false}))
 app.use(cors({
-    origin:"http://localhost:5173"
+    origin:["http://localhost:5173","https://linkify-xi-gules.vercel.app"]
 }))
 
 //routes
