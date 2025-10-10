@@ -11,7 +11,7 @@ interface urlData{
 
 export const urlRegister = async(req:Request,res:Response)=>{
     const {link} = req.body as urlData
-    console.log(link)
+ 
     try {
         if(!link){
             return res.status(404).json({status:404,message:"PLease enter a valid url"})
@@ -23,9 +23,9 @@ export const urlRegister = async(req:Request,res:Response)=>{
             original_link : link,
             short_code : url_code,
         })
-        console.log(url)
+       
 
-        return res.status(201).json({status:201,data:{ shortned_url : `http://localhost:5500/${url?.short_code}`,click_count:url.click_count},message:"Url shortned successfully"})
+        return res.status(201).json({status:201,data:{ shortned_url : `linkify-backend-ivory.vercel.app/${url?.short_code}`,click_count:url.click_count},message:"Url shortned successfully"})
         
     } catch (error) {
         return res.status(500).json({status:500,message:"Internal Server error"})
